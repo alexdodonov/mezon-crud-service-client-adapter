@@ -17,11 +17,11 @@
 	},
 	"support": {
 		"email": "alexey@dodonov.pro",
-		"issues": "https://github.com/alexdodonov/mezon-crud-service-client-adapater/issues",
-		"source": "https://github.com/alexdodonov/mezon-crud-service-client-adapater"
+		"issues": "https://github.com/alexdodonov/mezon-crud-service-client-adapter/issues",
+		"source": "https://github.com/alexdodonov/mezon-crud-service-client-adapter"
 	},
 	"minimum-stability": "dev",
-	"homepage": "https://github.com/alexdodonov/mezon-crud-service-client-adapater",
+	"homepage": "https://github.com/alexdodonov/mezon-crud-service-client-adapter",
 	"prefer-stable": true,
 	"autoload": {
 		"psr-4": {
