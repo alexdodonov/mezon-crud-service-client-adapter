@@ -1,5 +1,5 @@
 {
-	"name": "mezon/crud-service-client-adapater",
+	"name": "mezon/crud-service-client-adapter",
 	"description": "Adapter for the CRUD service client",
 	"license": "MIT",
 	"authors": [
