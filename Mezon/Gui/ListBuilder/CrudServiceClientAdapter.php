@@ -1,6 +1,10 @@
 <?php
 namespace Mezon\Gui\ListBuilder;
 
+use Mezon\CrudService\CrudServiceClientInterface;
+use Mezon\Gui\ListBuilder\Adapters\Common;
+use Mezon\CrudService\CrudServiceClient;
+
 /**
  * Class CrudServiceClientAdapter
  *
@@ -14,13 +18,13 @@ namespace Mezon\Gui\ListBuilder;
 /**
  * Logic adapter for list builder
  */
-class CrudServiceClientAdapter implements \Mezon\Gui\ListBuilder\ListBuilderAdapter
+class CrudServiceClientAdapter extends Common
 {
 
     /**
      * Crud Service Client object
      *
-     * @var \Mezon\CrudService\CrudServiceClient
+     * @var CrudServiceClientInterface
      */
     protected $crudServiceClient = null;
 
@@ -67,12 +71,12 @@ class CrudServiceClientAdapter implements \Mezon\Gui\ListBuilder\ListBuilderAdap
     /**
      * Method returns client to service
      *
-     * @return \Mezon\CrudService\CrudServiceClient Client
+     * @return CrudServiceClientInterface Client
      */
-    public function getClient(): \Mezon\CrudService\CrudServiceClient
+    public function getClient(): CrudServiceClientInterface
     {
         if ($this->crudServiceClient === null) {
-            $this->crudServiceClient = new \Mezon\CrudService\CrudServiceClient(
+            $this->crudServiceClient = new CrudServiceClient(
                 $this->service,
                 $this->login,
                 $this->password);
@@ -84,10 +88,10 @@ class CrudServiceClientAdapter implements \Mezon\Gui\ListBuilder\ListBuilderAdap
     /**
      * Method sets service client
      *
-     * @param \Mezon\CrudService\CrudServiceClient $crudServiceClient
+     * @param CrudServiceClientInterface $crudServiceClient
      *            Service client
      */
-    public function setClient(\Mezon\CrudService\CrudServiceClient $crudServiceClient)
+    public function setClient(CrudServiceClientInterface $crudServiceClient)
     {
         $this->crudServiceClient = $crudServiceClient;
     }
@@ -121,11 +125,11 @@ class CrudServiceClientAdapter implements \Mezon\Gui\ListBuilder\ListBuilderAdap
     /**
      * Record preprocessor
      *
-     * @param array $record
+     * @param object $record
      *            record to be preprocessed
-     * @return array preprocessed record
+     * @return object preprocessed record
      */
-    public function preprocessListItem(array $record): array
+    public function preprocessListItem(object $record): object
     {
         // in this case all transformations are done on the service's side
         return $record;

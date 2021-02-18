@@ -10,6 +10,9 @@
 			"role": "Founder"
 		}
 	],
+	"require-dev": {
+		"phpunit/phpunit": "^8.4"
+	},
 	"require": {
 		"php": ">=7.2.0",
 		"mezon/crud-service-client": "^1.0.0",
@@ -25,7 +28,10 @@
 	"prefer-stable": true,
 	"autoload": {
 		"psr-4": {
-			"Mezon\\Gui\\ListBuilder\\": ""
+			"Mezon\\": "./Mezon/"
 		}
+	},
+	"scripts": {
+		"test": "php ./vendor/phpunit/phpunit/phpunit"
 	}
 }

@@ -1,4 +1,5 @@
 <?php
+namespace Mezon\Gui\ListBuilder\Tests;
 
 class CrudServiceClientAdapterUnitTest extends \PHPUnit\Framework\TestCase
 {
